@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+.env
+.pytest_cache/
+.ipynb_checkpoints/
+# Don't ignore the package's data module
+!blockchain_fraud_prevention/data/
+# Ignore the top-level data directory but keep .gitkeep
+/data/*
+!/data/.gitkeep
