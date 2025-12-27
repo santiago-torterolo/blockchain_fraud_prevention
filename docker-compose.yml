@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  fraud-prevention-app:
+    build: .
+    container_name: blockchain_fraud_prevention
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
