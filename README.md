@@ -58,12 +58,14 @@ docker-compose up --build
 ## 🧪 Testing
 
 Run all tests
+```
 pytest tests/ -v
+```
 
 With coverage
-pytest tests/ --cov=blockchain_fraud_prevention --cov-report=html
-
-text
+```p
+ytest tests/ --cov=blockchain_fraud_prevention --cov-report=html
+```
 
 **Tests cover:**
 
@@ -261,19 +263,29 @@ Risk Distribution:
 
 ### **Local Development**
 
+```
 pip install -e .
+```
 
+```
 streamlit run blockchain_fraud_prevention/api/dashboard.py
+```
 
 ### **Docker Production**
 
+```
 docker-compose up --build
+```
 
 ### **Cloud Deployment (AWS/GCP/Azure)**
 
+```
 docker build -t blockchain-fraud .
+```
 
+```
 docker run -p 8501:8501 blockchain-fraud
+```
 
 ## 👤 Author
 
@@ -310,8 +322,6 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ⭐ **Star this repo if you found it useful!**
-
-🚀 **Deploy instantly:** `docker-compose up --build`
 
 💻 **Develop locally:** `pip install -e .`
 
