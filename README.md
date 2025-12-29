@@ -76,12 +76,12 @@ text
 
 ### **Python Requirements**
 
-streamlit==1.28.0
-pandas==2.0.3
-scikit-learn==1.3.0
-joblib==1.3.2
-numpy==1.24.3
-pytest==7.4.0
+- streamlit==1.28.0
+- pandas==2.0.3
+- scikit-learn==1.3.0
+- joblib==1.3.2
+- numpy==1.24.3
+- pytest==7.4.0
 
 ### **Docker Requirements**
 
@@ -91,99 +91,162 @@ pytest==7.4.0
 ## 📊 Project Structure
 
 blockchain_fraud_prevention/
+
 ├── api/
+
 │ ├── init.py
+
 │ └── dashboard.py # Streamlit interactive dashboard
+
 ├── fraud_detection/
+
 │ ├── init.py
+
 │ ├── model.py # Random Forest (99.1% accuracy)
+
 │ └── risk_scorer.py # 0-100 risk scoring system
+
 ├── blockchain/
+
 │ └── init.py # POW blockchain implementation
+
 ├── data/
+
 │ └── ethereum_txs.csv # 70,828 real Ethereum transactions
+
 ├── tests/
+
 │ ├── init.py
+
 │ └── test_model.py # pytest unit tests
+
 ├── notebooks/ # Jupyter notebooks (EDA ready)
+
 ├── Dockerfile # Docker container definition
+
 ├── docker-compose.yml # Production orchestration
+
 ├── requirements.txt # Python dependencies
+
 ├── setup.py # pip install -e . configuration
+
 ├── LICENSE # MIT License
+
 ├── .gitignore # Clean git (no venv/data)
+
 └── README.md # This file
 
 ## 🔄 Complete Data Pipeline
 
 RAW DATA: ethereum_txs.csv (70,828 transactions)
+
 ↓
 
 ETL PIPELINE
+
 ├── Transaction velocity analysis
+
 ├── Gas price anomaly detection
+
 ├── Time-based behavioral patterns
+
 ├── Value distribution analysis
+
 └── Network features (IP clustering)
+
 ↓
 
 FEATURE ENGINEERING (10+ signals)
+
 ├── train/test split (70/30)
+
 ├── Normalization & scaling
+
 └── Categorical encoding
+
 ↓
 
 MODEL TRAINING: Random Forest
+
 ├── Training time: ~2 minutes
+
 ├── Test accuracy: 99.1%
+
 └── Prediction time: <100ms/tx
+
 ↓
 
 RISK SCORING (0-100 scale)
+
 ├── Low Risk: 0-25
+
 ├── Medium Risk: 26-50
+
 ├── High Risk: 51-75
+
 └── Critical Risk: 76-100
 ↓
 
 STREAMLIT DASHBOARD
+
 ├── Interactive filtering
+
 ├── Real-time predictions
+
 ├── Risk heatmaps
+
 └── Transaction drill-down
 
 ## 🛠️ Technology Stack
 
 Machine Learning:
+
 ├── scikit-learn (Random Forest Classifier)
+
 ├── pandas (Data manipulation)
+
 ├── numpy (Numerical computing)
+
 └── joblib (Model persistence)
 
 Frontend:
+
 └── Streamlit (Interactive dashboard)
 
 DevOps:
+
 ├── Docker (Containerization)
+
 ├── Docker Compose (Orchestration)
+
 └── pytest (Testing framework)
 
 Data:
+
 └── 70k+ Ethereum transactions (real dataset)
 
 ## 📈 Model Performance
 
 Validation Results:
+
 ├── Accuracy: 99.1%
+
 ├── Precision: 98.7% (low false positives)
+
 ├── Recall: 97.2% (catches fraud)
+
 ├── F1-Score: 97.9%
+
 └── ROC-AUC: 0.992
 
 Risk Distribution:
+
 ├── Low Risk (0-25): 62.1%
+
 ├── Medium Risk (26-50): 28.4%
+
 ├── High Risk (51-75): 8.2%
+
 └── Critical Risk (76-100): 1.3%
 
 ## 🎓 Use Cases
@@ -199,6 +262,7 @@ Risk Distribution:
 ### **Local Development**
 
 pip install -e .
+
 streamlit run blockchain_fraud_prevention/api/dashboard.py
 
 ### **Docker Production**
@@ -208,6 +272,7 @@ docker-compose up --build
 ### **Cloud Deployment (AWS/GCP/Azure)**
 
 docker build -t blockchain-fraud .
+
 docker run -p 8501:8501 blockchain-fraud
 
 ## 👤 Author
